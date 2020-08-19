@@ -76,6 +76,8 @@ class Solver {
 			message.setText("Couldn't load files. Solution will not work.");
 			loaded = false;
 		}
+
+		Search.solution("UUUUUUUUURRRRRRRRRFFFFFFFFFDDDDDDDDDLLLLLLLLLBBBBBBBBB", 22, 5, false);
 	}
 
 	void solve() {
