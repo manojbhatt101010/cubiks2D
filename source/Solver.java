@@ -1,7 +1,8 @@
--*/import java.util.*;
+import java.util.*;
 import java.io.*;
 import javax.swing.*;
 import java.awt.Color;
+import org.kociemba.twophase.*;
 
 class Solver {
 	JButton[][] face; 
@@ -89,7 +90,7 @@ class Solver {
 
 		solution.clear();
 		try {
-			solution.add("<html><b><u><font color = black>Solved:)<br></font></u><br><font color = blue>Cross:</font>");
+			solution.add("<html><b><u><font color = black>Solved:)<br></font></u><font color = blue>Cross:</font>");
 			solveCross();
 			solution.add("<br><font color = blue>F2L:</font>");
 			F2L();
@@ -97,7 +98,7 @@ class Solver {
 			OLL();
 			solution.add("<br><font color = blue>PLL:</font>");
 			PLL();
-			solution.add("</b></html>");
+			// solution.add("</b></html>");
 		} catch(Exception e) {
 			message.setForeground(Color.red);
 			restore(copy);
@@ -115,6 +116,8 @@ class Solver {
 		}
 
 		restore(copy);
+		solution.add("<br><br><font color = blue>Twophase: </font>" + getAdvanced());
+
 		update();
 		message.setForeground(new Color(0, 77, 26));
 		clean(solution);
@@ -123,6 +126,30 @@ class Solver {
 			sol.append(solution.get(i) + " ");
 
 		message.setText(sol.toString());
+	}
+
+	String getAdvanced() {
+		StringBuilder s = new StringBuilder();
+		for(int i = 0; i < 6; i++) {
+			for(int j = 0; j < 9; j++) {
+				if(c[i][j] == c[0][4]) 
+					s.append("U");
+				else if(c[i][j] == c[1][4])
+					s.append("D");
+				else if(c[i][j] == c[2][4])
+					s.append("F");
+				else if(c[i][j] == c[3][4])
+					s.append("B");
+				else if(c[i][j] == c[4][4])
+					s.append("L");
+				else if(c[i][j] == c[5][4])
+					s.append("R");
+			}
+		}
+		s = new StringBuilder(s.substring(0, 9) + s.substring(45, 54) + s.substring(18, 27) + s.substring(9, 18) + s.substring(36, 45) + s.substring(27, 36));
+		System.out.println(s);
+		String info = "";
+		return Search.solution(s.toString(), 22, 5, false);
 	}
 
 	boolean isSolved() {
