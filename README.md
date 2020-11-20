@@ -3,6 +3,6 @@
 
 <img src = "Screenshots/fill.png" width = "400" height = "450">   <img src = "Screenshots/solution.png" width = "400" height = "450">
 
-**Download and run CubeSolver.jar to try it out yourself.**
+**Download and run CubeSolver.jar to try it out yourself.** (Java 8 or higher required)
 
 (GUI is inspired from Kociemba's <a href = "http://kociemba.org/download.htm">Java package</a> and org.kociemba.twophase package also belongs to him.)
