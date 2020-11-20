@@ -11,7 +11,7 @@ class Main extends JFrame implements KeyListener, MouseListener {
  	JButton[] colorPicker = new JButton[6]; 
  	JButton solve, clear, fill, apply, randomScramble;
  	JTextField moves;
- 	JLabel colorPickerLabel, message, randomScrambleLabel, movesLabel, methodUsed;
+ 	JLabel colorPickerLabel, message, randomScrambleLabel, movesLabel;
 	
 	Main() {
 		getContentPane().setLayout(null); 
@@ -25,11 +25,6 @@ class Main extends JFrame implements KeyListener, MouseListener {
 		int[] yPos = {0, 6, 3, 3, 3, 3};
 
 		Color[] colors = {Color.white, Color.yellow, Color.green, Color.blue, new Color(255, 128, 0), Color.red, Color.lightGray};
-
-		methodUsed = new JLabel("<html><b><u>Fridrich Method</u></b></html>");
-		methodUsed.setBounds(10, 5, faceSize * 3, faceSize);
-		methodUsed.setFont(new Font("Monospace Regular", Font.PLAIN, 14));
-		getContentPane().add(methodUsed);
 		
 		for(int i = 0; i < 6; i++) {
 			colorPicker[i] = new JButton();

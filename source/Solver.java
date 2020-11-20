@@ -149,7 +149,6 @@ class Solver {
 			}
 		}
 		s = new StringBuilder(s.substring(0, 9) + s.substring(45, 54) + s.substring(18, 27) + s.substring(9, 18) + s.substring(36, 45) + s.substring(27, 36));
-		System.out.println(s);
 		String info = "";
 		return Search.solution(s.toString(), 22, 5, false);
 	}
